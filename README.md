@@ -1,4 +1,19 @@
-## ---Readme ---
+## -- TASK --
+listar,incluir,editar e deletar todos os nossos motoristas onde eles terão nome,cpf,email,situação (Livre,Em Curso,Retornando) e status (Ativo ou Não).
+Devera ser um CRUD básico.
+
+## -- Tecnologias Utilizadas --
+```
+Docker
+Docker-compose
+Composer
+Php 7.3
+Laravel 8.6
+Mysql 8
+Git
+```
+
+## ---Receita ---
 
 1. Clone repositorio:
 
