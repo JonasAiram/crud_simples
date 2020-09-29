@@ -1,4 +1,4 @@
-## -- -Readme ---
+## ---Readme ---
 
 1. Clone repositorio:
 
@@ -11,20 +11,20 @@
 3. Alterar as permissões da pasta bootstrap/cache e storage/:
 
 ```
-$ sudo chown -R $USER:www-data bootstrap/cache/ storage/
-$ sudo chmod -R 775 bootstrap/cache/ storage/
+    $ sudo chown -R $USER:www-data bootstrap/cache/ storage/
+    $ sudo chmod -R 775 bootstrap/cache/ storage/
 ```
 ***
 4. Build o projeto e levante o container:
 ``` 
-$ docker-compose build
-$ docker-compose up -d
+    $ docker-compose build
+    $ docker-compose up -d
 ```  
 ***
 5. Alterar usuario do mysql:
 ``` 
-ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY 'root';
-FLUSH PRIVILEGES;
+    ALTER USER 'root' IDENTIFIED WITH mysql_native_password BY 'root';
+    FLUSH PRIVILEGES;
 ```
 ***
 6. Gerar a key do laravel:
