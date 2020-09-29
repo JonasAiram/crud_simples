@@ -47,3 +47,5 @@ Git
 ***
 7. Criar a tabela no banco utilizando migration:
 `$ php artisan migrate`
+***
+8. Acesse: http://localhost:8011/motoristas
