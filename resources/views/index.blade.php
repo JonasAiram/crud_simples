@@ -10,6 +10,11 @@
     </div>
 
     <div class="col-8 m-auto">
+        @if (session('sucesso'))
+            <div class="alert alert-success">
+                {{ session('sucesso') }}
+            </div>
+        @endif
         @csrf
         <table class="table text-center">
             <thead class="thead-dark">

@@ -94,7 +94,7 @@ class MotoristaController extends Controller
             'situacao'=>$request->situacao,
             'status'=>$request->status
         ]);
-        return redirect('motoristas');
+        return redirect('motoristas')->with('sucesso', 'Motorista Atualizado Com Sucesso');;
     }
 
     /**
@@ -106,6 +106,6 @@ class MotoristaController extends Controller
     public function destroy($id)
     {
         $del=$this->objMotorista->destroy($id);
-        return redirect('/motoristas')->with('Motorista Excluido Com Sucesso');
+        return redirect('/motoristas')->with('sucesso', 'Motorista Excluido Com Sucesso');
     }
 }
