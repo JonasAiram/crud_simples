@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 #Route::get('motoristas', 'MotoristaController@index');
 Route::resource('motoristas', MotoristaController::class);
+Route::get('motoristas/{id}/delete', 'MotoristaController@destroy');

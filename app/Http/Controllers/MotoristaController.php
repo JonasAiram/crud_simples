@@ -105,6 +105,7 @@ class MotoristaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $del=$this->objMotorista->destroy($id);
+        return redirect('/motoristas')->with('Motorista Excluido Com Sucesso');
     }
 }
