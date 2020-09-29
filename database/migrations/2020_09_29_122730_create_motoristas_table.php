@@ -20,6 +20,7 @@ class CreateMotoristasTable extends Migration
             $table->string('email')->unique();
             $table->string('situacao');
             $table->string('status');
+            $table->timestamps();
         });
     }
 

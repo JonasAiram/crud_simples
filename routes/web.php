@@ -13,4 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'MotoristaController@index');
+#Route::get('motoristas', 'MotoristaController@index');
+Route::resource('motoristas', MotoristaController::class);

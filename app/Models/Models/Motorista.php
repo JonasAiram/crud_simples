@@ -9,6 +9,7 @@ class Motorista extends Model
 {
     use HasFactory;
 
-    protected $table = 'motorista';
+    protected $table='motoristas';
+    protected $fillable=['nome', 'cpf', 'email', 'status', 'situacao'];
 
 }

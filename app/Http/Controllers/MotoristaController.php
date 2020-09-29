@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Models\Motorista;
 
 class MotoristaController extends Controller
 {
+    private $objMotorista;
+
+    public function __construct()
+    {
+        $this->objMotorista = new Motorista();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +20,8 @@ class MotoristaController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $motorista = $this->objMotorista->all();
+        return view('index', compact('motorista'));
     }
 
     /**
@@ -23,7 +31,7 @@ class MotoristaController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -34,7 +42,16 @@ class MotoristaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cad=$this->objMotorista->create([
+            'nome'=>$request->nome,
+            'cpf'=>$request->cpf,
+            'email'=>$request->email,
+            'situacao'=>$request->situacao,
+            'status'=>$request->status
+         ]);
+         if($cad){
+             return redirect('motoristas');
+         }
     }
 
     /**
@@ -45,7 +62,8 @@ class MotoristaController extends Controller
      */
     public function show($id)
     {
-        //
+        $motorista = $this->objMotorista->find($id);
+        return view('show',compact('motorista'));
     }
 
     /**
@@ -56,7 +74,8 @@ class MotoristaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $motorista=$this->objMotorista->find($id);
+        return view('create',compact('motorista'));
     }
 
     /**
@@ -68,7 +87,14 @@ class MotoristaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->objMotorista->where(['id'=>$id])->update([
+            'nome'=>$request->nome,
+            'cpf'=>$request->cpf,
+            'email'=>$request->email,
+            'situacao'=>$request->situacao,
+            'status'=>$request->status
+        ]);
+        return redirect('motoristas');
     }
 
     /**
